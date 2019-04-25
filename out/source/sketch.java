@@ -30,14 +30,17 @@ public void draw() {
   StringBuilder randomWord = new StringBuilder(3);
   
   for (int i = 0; i < 3; i++) { 
-    int index = (int)(AlphaNumericString.length() * Math.random());
-    randomWord.append(AlphaNumericString.charAt(index));
+    int index = (int)(ALPHABET_STRING.length() * Math.random());
+    randomWord.append(ALPHABET_STRING.charAt(index));
   }
 
-  text(randomWord.toString(), random(0, width), random(0, height));
-  // if "cat".equals(randomWord.toString()) {
-  //   exit();
-  // }
+  if ("cat".equals(randomWord.toString())) {
+    text(randomWord.toString(), random(0, width), random(0, height));
+    fill(255, 0, 0);
+    noLoop();
+  } else {
+    text(randomWord.toString(), random(0, width), random(0, height));
+  }
   
   ++wordsGenerated;
 }
