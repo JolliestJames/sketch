@@ -18,10 +18,13 @@ void draw() {
     randomWord.append(ALPHABET_STRING.charAt(index));
   }
 
-  text(randomWord.toString(), random(0, width), random(0, height));
-  // if "cat".equals(randomWord.toString()) {
-  //   exit();
-  // }
+  if ("cat".equals(randomWord.toString())) {
+    text(randomWord.toString(), random(0, width), random(0, height));
+    fill(255, 0, 0);
+    noLoop();
+  } else {
+    text(randomWord.toString(), random(0, width), random(0, height));
+  }
   
   ++wordsGenerated;
 }
