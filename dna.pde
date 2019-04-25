@@ -10,6 +10,19 @@ class DNA {
     }
   }
 
+  DNA crossover(DNA partner) {
+    DNA child = new DNA();
+
+    int midpoint = int(random(genes.length));
+
+    for (int i = 0; i < genes.length; i++) {
+      if (i > midpoint) child.genes[i] = genes[i];
+      else child.genes[i] = partner.genes[i];
+    }
+
+    return child;
+  }
+
   void fitness() {
     int score = 0;
 
