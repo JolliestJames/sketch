@@ -1,3 +1,0 @@
-class DNA {
-  String phrase;
-}
